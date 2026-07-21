@@ -14,7 +14,7 @@ Repositorio con las entregas del trayecto de agentes autónomos con n8n. Cada ch
 
 | Checkpoint | Descripción | Archivo |
 |---|---|---|
-| 1 | Agente autónomo básico (Tools Agent) - Asistente de Calificación de Leads | [`checkpoint1/checkpoint1_nombre_apellido.json`](./checkpoint1/checkpoint1_nombre_apellido.json) |
+| 1 | Agente autónomo básico (Tools Agent) - Asistente de Calificación de Leads | [`checkpoint1/checkpoint1_nombre_apellido.json`](./checkpoint1/checkpoint1_JoseMariaMuller.json) |
 
 ## Checkpoint 1 - Agente Autónomo Básico
 
