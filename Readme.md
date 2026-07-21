@@ -33,4 +33,4 @@ Se realizaron pruebas manuales de ejecución (`Execute Workflow`) enviando mensa
 
 ## Archivo entregable
 
-[`checkpoint1_JoseMaria_Muller.json`](./checkpoint1_JoseMaria_Muller.json) — workflow exportado desde n8n.
+[`Checkpoint1_JoseMaria_Muller.json`](./Checkpoint1_JoseMaria_Muller.json) — workflow exportado desde n8n.
