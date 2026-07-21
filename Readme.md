@@ -1,6 +1,12 @@
-# Trayecto IA Agéntica - José María Müller
+# Agente Autónomo Básico - n8n
 
-Repositorio con las entregas del trayecto de agentes autónomos con n8n. Cada checkpoint se encuentra en su propia carpeta, con el archivo JSON exportado del workflow correspondiente.
+Checkpoint de pre-entrega: configuración de un agente autónomo funcional (Tools Agent) en n8n, correspondiente al primer módulo del trayecto de IA Agéntica.
+
+**Autor:** José María Müller
+
+## Rol del agente
+
+**Asistente de Calificación de Leads** — interactúa con potenciales clientes por chat, identifica si son un lead calificado y, en caso afirmativo, notifica automáticamente al equipo comercial.
 
 ## Stack utilizado
 
@@ -10,24 +16,21 @@ Repositorio con las entregas del trayecto de agentes autónomos con n8n. Cada ch
 - **Herramienta (Tool) conectada al agente:** Gmail (envío de notificaciones de leads calificados).
 - **Observabilidad:** Slack (log automático de cada interacción, con input, output y pasos intermedios ejecutados).
 
-## Checkpoints
+## Componentes implementados
 
-| Checkpoint | Descripción | Archivo |
-|---|---|---|
-| 1 | Agente autónomo básico (Tools Agent) - Asistente de Calificación de Leads | [`Checkpoint1/Checkpoint1_JoseMaria_Muller.json`](./Checkpoint1/Checkpoint1_JoseMaria_Muller.json) |
-
-## Checkpoint 1 - Agente Autónomo Básico
-
-**Rol del agente:** Asistente de Calificación de Leads.
-
-**Componentes implementados:**
 - **Trigger:** Chat Trigger, captura el mensaje inicial del usuario.
 - **AI Agent (modo Tools Agent):** conectado a Google Gemini Chat Model, con `maxIterations: 8` como guardrail de iteraciones.
 - **System Prompt modular:** estructurado en Rol → Ámbito → Objetivo → Reglas y Escalamiento.
 - **Tool:** nodo de Gmail conectado lateralmente al agente (no de forma secuencial), con una descripción semántica extensa que define exactamente cuándo debe activarse (lead calificado: necesidad real + presupuesto + autoridad de decisión).
 - **Observabilidad:** nodo de Slack conectado a la salida del agente, que reporta el input del usuario, el output generado y la cantidad de pasos intermedios ejecutados.
 
-**Validación:** se realizaron pruebas manuales de ejecución (`Execute Workflow`) enviando mensajes de prueba al chat, verificando que:
+## Validación
+
+Se realizaron pruebas manuales de ejecución (`Execute Workflow`) enviando mensajes de prueba al chat, verificando que:
 1. El agente responde de forma coherente ante consultas genéricas, sin activar la herramienta.
 2. Ante un mensaje que cumple los criterios de lead calificado, el agente activa de forma autónoma la herramienta de Gmail y envía la notificación correspondiente.
 3. Cada interacción queda registrada correctamente en el canal de Slack de observabilidad, sin errores de sintaxis en las expresiones.
+
+## Archivo entregable
+
+[`checkpoint1_JoseMaria_Muller.json`](./checkpoint1_JoseMaria_Muller.json) — workflow exportado desde n8n.
